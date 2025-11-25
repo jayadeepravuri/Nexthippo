@@ -7,7 +7,8 @@ export default function Hero() {
         textAlign: "center",
         color: "#f6f2ff",
         display: "grid",
-        gap: "1rem"
+        gap: "1rem",
+        justifyItems: "center",
       }}
     >
       <h1
@@ -34,7 +35,7 @@ export default function Hero() {
 
       <button
         style={{
-          padding: "0.75rem 1.5rem",
+          padding: "0.7rem 1rem",
           borderRadius: "999px",
           border: "1px solid rgba(255, 255, 255, 0.25)",
           background: "linear-gradient(120deg, #8f7bff, #e65fef)",
@@ -42,8 +43,10 @@ export default function Hero() {
           boxShadow: "0 15px 40px rgba(137, 108, 255, 0.35)",
           backdropFilter: "blur(6px)",
           fontSize: "1rem",
-          cursor: "pointer"
-        }}
+          cursor: "pointer",
+          width: "fit-content",
+          maxWidth: "180px",
+          margin: "0 auto",      }}
       >
         Start learning
       </button>
