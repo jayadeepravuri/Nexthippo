@@ -78,9 +78,10 @@
 }
 
 .logo {
-  height: 40px;
-  max-height: 48px;
-  width: auto;
+  height: 120px;
+  max-height:120px;
+  width: 570px;
+  object-fit: contain;
 }
 
 .card-nav-cta-button {
@@ -163,7 +164,7 @@
 @media (max-width: 768px) {
   .card-nav-container {
     width: 90%;
-    top: 1.2em;
+    margin: 1.5rem auto 1.5rem;
   }
 
   .card-nav-top {

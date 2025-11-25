@@ -1,0 +1,94 @@
+.landing-prism-hero {
+  position: relative;
+  min-height: 760px;
+  display: flex;
+  justify-content: center;
+  padding: 2.5rem 1.25rem 3.5rem;
+  background: radial-gradient(circle at 15% 20%, rgba(122, 106, 255, 0.25), transparent 38%), #0a0715;
+  overflow: hidden;
+}
+
+.prism-bg {
+  position: absolute;
+  inset: -18%;
+  pointer-events: none;
+  filter: saturate(1.05);
+}
+
+.prism-overlay {
+  position: absolute;
+  inset: -1px;
+  background:
+    radial-gradient(circle at 35% 0%, rgba(255, 255, 255, 0.12), rgba(10, 7, 21, 0.85) 48%),
+    linear-gradient(180deg, rgba(10, 7, 21, 0.75) 0%, rgba(10, 7, 21, 0.8) 55%, rgba(10, 7, 21, 0.6) 100%);
+  mix-blend-mode: screen;
+  backdrop-filter: blur(18px);
+  pointer-events: none;
+}
+
+.landing-prism-content {
+  position: relative;
+  z-index: 2;
+  width: min(1100px, 94%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.6rem;
+}
+
+.glass-nav.card-nav-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.glass-nav .card-nav {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(18px);
+}
+
+.glass-nav .card-nav-top {
+  color: #f7f5ff;
+}
+
+.glass-nav .card-nav-cta-button {
+  background: linear-gradient(120deg, #8f7bff, #e65fef);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  box-shadow: 0 14px 35px rgba(137, 108, 255, 0.35);
+}
+
+.glass-nav .card-nav-cta-button:hover {
+  background: linear-gradient(120deg, #9c88ff, #ef7bff);
+}
+
+.glass-nav .nav-card {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.hero-shell {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 2.4rem;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(16px);
+}
+
+@media (max-width: 768px) {
+  .landing-prism-hero {
+    padding: 1.75rem 1rem 2.25rem;
+  }
+
+  .landing-prism-content {
+    width: 100%;
+    gap: 2rem;
+  }
+
+  .hero-shell {
+    padding: 1.6rem;
+  }
+}

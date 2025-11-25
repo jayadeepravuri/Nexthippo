@@ -1,80 +1,94 @@
-export default function LandingPage() {
-  return (
-    <div style={styles.container}>
-      <header style={styles.header}>
-        <h1 style={styles.title}>Welcome to My App 🚀</h1>
-        <p style={styles.subtitle}>
-          A modern landing page built with React + Next.js
-        </p>
-        <button style={styles.button}>Get Started</button>
-      </header>
+﻿"use client";
 
-      <section style={styles.section}>
-        <h2 style={styles.sectionTitle}>Why Choose Us?</h2>
-        <div style={styles.features}>
-          <div style={styles.featureCard}>
-            <h3>⚡ Fast</h3>
-            <p>Super fast performance with Next.js.</p>
-          </div>
-          <div style={styles.featureCard}>
-            <h3>🔒 Secure</h3>
-            <p>Security best practices out of the box.</p>
-          </div>
-          <div style={styles.featureCard}>
-            <h3>🎨 Beautiful</h3>
-            <p>Clean, modern UI built with React.</p>
+import CardNav from "./components/CardNav";
+import Hero from "./components/Hero";
+import HowItWorks from "./components/HowItWorks";
+import TryIt from "./components/TryIt";
+import Prism from "./components/Prism";
+import logo from "@/public/logo.svg";
+import "./landing.css";
+
+export default function LandingPage() {
+  const items = [
+    {
+      label: "About",
+      bgColor: "#0D0716",
+      textColor: "#fff",
+      links: [
+        { label: "Company", ariaLabel: "About Company" },
+        { label: "Careers", ariaLabel: "About Careers" }
+      ]
+    },
+    {
+      label: "Projects",
+      bgColor: "#170D27",
+      textColor: "#fff",
+      links: [
+        { label: "Featured", ariaLabel: "Featured Projects" },
+        { label: "Case Studies", ariaLabel: "Project Case Studies" }
+      ]
+    },
+    {
+      label: "Contact",
+      bgColor: "#271E37",
+      textColor: "#fff",
+      links: [
+        { label: "Email", ariaLabel: "Email us" },
+        { label: "Twitter", ariaLabel: "Twitter" },
+        { label: "LinkedIn", ariaLabel: "LinkedIn" }
+      ]
+    }
+  ];
+
+  return (
+    <>
+      <section className="landing-prism-hero">
+        <div className="prism-bg">
+          <Prism
+            animationType="3drotate"
+            timeScale={0.45}
+            height={3.8}
+            baseWidth={6}
+            scale={3.9}
+            hueShift={0.55}
+            colorFrequency={1.1}
+            noise={0.4}
+            glow={1.05}
+            bloom={1.15}
+          />
+        </div>
+        <div className="prism-overlay" />
+
+        <div className="landing-prism-content">
+          <CardNav
+            className="glass-nav"
+            logo={logo}
+            logoAlt="Company Logo"
+            items={items}
+            baseColor="rgba(255, 255, 255, 0.08)"
+            menuColor="#F7F5FF"
+            buttonBgColor="rgba(255, 255, 255, 0.12)"
+            buttonTextColor="#F7F5FF"
+            ease="power3.out"
+          />
+
+          <div className="hero-shell">
+            <Hero />
           </div>
         </div>
       </section>
-    </div>
+
+      <main
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "4rem",
+          padding: "3rem 1.5rem"
+        }}
+      >
+        <HowItWorks />
+        <TryIt />
+      </main>
+    </>
   );
 }
-
-const styles = {
-  container: {
-    fontFamily: "sans-serif",
-  },
-  header: {
-    textAlign: "center",
-    padding: "80px 20px",
-    background: "#f5f5f5",
-  },
-  title: {
-    fontSize: "3rem",
-    marginBottom: "20px",
-  },
-  subtitle: {
-    fontSize: "1.2rem",
-    marginBottom: "30px",
-    color: "#555",
-  },
-  button: {
-    padding: "12px 24px",
-    fontSize: "1rem",
-    background: "black",
-    color: "white",
-    borderRadius: "8px",
-    cursor: "pointer",
-  },
-  section: {
-    padding: "60px 20px",
-  },
-  sectionTitle: {
-    textAlign: "center",
-    marginBottom: "40px",
-    fontSize: "2rem",
-  },
-  features: {
-    display: "flex",
-    gap: "20px",
-    justifyContent: "center",
-    flexWrap: "wrap",
-  },
-  featureCard: {
-    width: "250px",
-    padding: "20px",
-    border: "1px solid #ddd",
-    borderRadius: "12px",
-    textAlign: "center",
-  },
-};
